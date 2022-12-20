@@ -1,9 +1,14 @@
 <template>
   <main class="login-container">
-    <h1><b>Entrar</b></h1>
+    <h1>Entrar</h1>
     <form @submit.prevent="login" class="login-form">
       <div id="user-container">
-        <input v-model="email" type="text" name="email" placeholder="Endereço de email"/>
+        <input
+          v-model="email"
+          type="text"
+          name="email"
+          placeholder="Endereço de email"
+        />
       </div>
       <div id="password-container">
         <input
@@ -14,7 +19,10 @@
           placeholder="Senha"
         />
       </div>
-      <button>Entrar</button>
+      <div class="goals-progress">
+        <a href="http://">Esqueci minha senha</a>
+        <button>Entrar</button>
+      </div>
     </form>
   </main>
 </template>
@@ -50,56 +58,43 @@ async function login() {
 </script>
 
 <style>
-.login-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 20px 0;
-}
-
-.login-form div {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin: 5px 0;
-    padding: 10px;
-    position: relative;
-
-    animation: backInLeft;
-    animation-duration: 1s;
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: black;
 }
 
 .login-container {
   text-align: center;
-  border-radius: 0px;
-  margin: 200px 200px;
-  padding: 20px 0px;
-  border: 1px solid rgba(0, 0, 0, 0.345);
-  box-shadow: 5px 10px #888888;
+  border: 1px solid #ccc;
+  box-shadow: 1px 2px #888888;
 }
 
 .login-form {
+  padding: 10px;
+}
+
+input {
+  width: 40%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid black;
+  transition: background-color 300ms ease-in-out;
   margin-bottom: 1rem;
 }
 
 button {
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid #ccc;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #3BC849;
+  background-color: #3bc849;
   transition: background-color 300ms ease-in-out, transform 100ms ease-in-out;
 }
 
-button:hover {
-  background-color: #33a06f;
-}
-
-button:active {
-  background-color: #33a06f;
-  transform: translateY(0.5px);
+a {
+  font-size: small;
+  color: #3bc849;
 }
 </style>
