@@ -1,7 +1,11 @@
 <template>
-  <main class="login-container">
-    <h1>Entrar</h1>
-    <form @submit.prevent="login" class="login-form">
+  <main class="signup-container">
+    <h1>Criar conta</h1>
+    <form @submit.prevent="signup" class="signup-form">
+      <div id="username-container">
+        <input type="text" name="Name" placeholder="Nome" />
+        <input type="text" name="Last Name" placeholder="Sobrenome" />
+      </div>
       <div id="user-container">
         <input
           v-model="email"
@@ -20,11 +24,7 @@
         />
       </div>
       <div>
-        <a href="http://">Esqueci minha senha</a>
-        <button>Entrar</button>
-      </div>
-      <div class="signup">
-        <router-link to="/signup">Criar conta</router-link>
+        <button>Criar conta</button>
       </div>
     </form>
   </main>
@@ -39,21 +39,21 @@ const router = useRouter();
 
 const email = ref("usuario@email.com");
 const password = ref("senha");
-const errorLogin = ref(false);
+const errorsignup = ref(false);
 
-async function login() {
+async function signup() {
   try {
     const data = "loggedIn";
 
     if (data === "loggedIn") {
       router.push("/home");
     } else {
-      errorLogin.value = true;
+      errorsignup.value = true;
     }
 
     console.log(data);
   } catch (error) {
-    errorLogin.value = true;
+    errorsignup.value = true;
 
     console.log(error);
   }
@@ -68,16 +68,16 @@ h1 {
   color: black;
 }
 
-.login-container {
+.signup-container {
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 260px;
+  height: 280px;
   text-align: center;
   border: 1px solid #ccc;
   box-shadow: 1px 2px #888888;
 }
 
-.login-form {
+.signup-form {
   padding: 10px;
 }
 
