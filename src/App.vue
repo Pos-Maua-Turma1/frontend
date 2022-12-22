@@ -3,14 +3,21 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <router-link to="/">
-    <img
-      id="logo"
-      src="https://maua.br/images/logo-IMT.png"
-      alt="Instituto Mauá de Tecnologia"
-      style="width: 150px !important"
-    />
-  </router-link>
+  <div class="container-top-bar"> 
+    <router-link to="/">
+      <img
+        id="logo"
+        src="https://maua.br/images/logo-IMT.png"
+        alt="Instituto Mauá de Tecnologia"
+        style="width: 150px !important"
+      />
+    </router-link>
+
+    <input type="search" placeholder="Search" class="search-field" />
+    <button>test2</button>
+    <button>Test</button>
+  </div>
+
 
   <RouterView />
   <hr />
@@ -21,6 +28,22 @@ import { RouterView } from "vue-router";
 </template>
 
 <style>
+
+.search-field {
+    padding: 10px 35px 10px 15px;
+  border-radius: 100px;
+  outline: none;
+}
+
+.container-top-bar {
+  border: 1px solid #aaaaaa;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 10px;
+  align-items: center;
+}
+
 p {
   margin-top: 2px;
   font-size: smaller;

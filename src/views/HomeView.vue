@@ -2,14 +2,16 @@
   <main>
     <div class="column-container">
       <div class="menu">
-        <button @click="addNote()">Nova nota</button>
-        <button @click="editNote(2)">Editar nota</button>
-        <button>Arquivo</button>
-        <button @click="deleteNote(2)">Lixeira</button>
+        <button class="list-item" @click="addNote()"><h1>Nova nota</h1></button>
+        <button class="list-item" @click="editNote(2)"><h1>Editar nota</h1></button>
+        <button class="list-item"><h1>Arquivo</h1></button>
+        <button class="list-item" @click="deleteNote(2)"><h1>Lixeira</h1></button>
       </div>
-      <ul class="list" v-for="note in notes" :key="note.id">
-        <li>{{ note.note_body }}</li>
-      </ul>
+      <div class="list">
+        <ul v-for="note in notes" :key="note.id">
+          <li>{{ note.note_body }}</li>
+        </ul>
+      </div>
     </div>
   </main>
 </template>
@@ -76,16 +78,19 @@ export default {
 
 <style>
 .menu {
+  height: auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 300px;
+  gap: 16px;
   margin-right: 100px;
+  border: 1px solid #AAAAAA;
+  padding: 10px 0px 150px 54px;
 }
 
 .list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   max-height: 200px;
   margin-right: 100px;
@@ -97,5 +102,19 @@ export default {
   flex-wrap: wrap;
   max-height: 500px;
   margin-bottom: 20px;
+}
+.list-item {
+  width: 325px;
+  height: 70px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 0;
+  margin-left: 40px;
+  font-weight: 700;
+  color: white;
 }
 </style>
