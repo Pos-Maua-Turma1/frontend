@@ -14,8 +14,7 @@ import { RouterView } from "vue-router";
     </router-link>
 
     <input type="search" placeholder="Search" class="search-field" />
-    <button>test2</button>
-    <button>Test</button>
+    <button type="image">Menu</button>
   </div>
 
 
@@ -30,7 +29,7 @@ import { RouterView } from "vue-router";
 <style>
 
 .search-field {
-    padding: 10px 35px 10px 15px;
+  padding: 10px 35px 10px 15px;
   border-radius: 100px;
   outline: none;
 }
