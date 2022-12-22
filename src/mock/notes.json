@@ -1,0 +1,50 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "note_body": "Nota 1",
+      "created_at": "1668990427",
+      "updated_at": "1671582429",
+      "label": [
+        {
+          "id": 1,
+          "name": "label 1",
+          "description": "Descrição da label 1",
+          "created_at": "1668990427",
+          "updated_at": "1671582429"
+        },
+        {
+          "id": 2,
+          "name": "label 2",
+          "note_body": "Descrição da label 2",
+          "created_at": "1668990427",
+          "updated_at": "1671582429"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "note_body": "Nota 2",
+      "created_at": "1668990427",
+      "updated_at": "1671582429",
+      "label": [
+        {
+          "id": 1,
+          "name": "label 1",
+          "description": "Descrição da label 1",
+          "created_at": "1668990427",
+          "updated_at": "1671582429"
+        },
+        {
+          "id": 2,
+          "name": "label 2",
+          "note_body": "Descrição da label 2",
+          "created_at": "1668990427",
+          "updated_at": "1671582429"
+        }
+      ]
+    }
+  ]
+}

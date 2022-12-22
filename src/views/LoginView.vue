@@ -31,6 +31,7 @@
 </template>
 
 <script setup>
+import http from "@/services/usersService";
 import { useRouter } from "vue-router";
 
 import { ref } from "vue";
@@ -43,18 +44,19 @@ const errorLogin = ref(false);
 
 async function login() {
   try {
-    const data = "loggedIn";
+    const { data } = await http.get("/users", {
+      email: email.value,
+      password: password.value,
+    });
 
-    if (data === "loggedIn") {
+    if (data.length > 0) {
       router.push("/home");
     } else {
       errorLogin.value = true;
+      alert("Usuário e/ou Senha estão incorretos. Tente novamente.");
     }
-
-    console.log(data);
   } catch (error) {
     errorLogin.value = true;
-
     console.log(error);
   }
 }
